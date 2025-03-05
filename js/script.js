@@ -112,7 +112,7 @@ $(function () {
               containerAnimation: scrollTween,
               onEnter: (self) => (counter.innerText = num), // 스크롤 위치가 start를 지나 앞으로 이동 할 때. .counter .now에 적어준다.
               onEnterBack: (self) => (counter.innerText = num), // 스크롤 위치가 end를 지나 뒤로 이동 할 때. .counter .now에 적어준다.
-              markers: true,
+              markers: false,
             });
           });
         });

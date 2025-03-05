@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital@1&family=Noto+Sans+KR&family=Public+Sans&display=swap');
+@import 'responsive';
 
 /* Reset */
 * {
@@ -112,7 +113,6 @@ body {
   overflow: hidden;
   background-color: #000;
   color: #fff;
-  height: 500vh;
 
   .visual {
     padding-top: 150px;
@@ -225,7 +225,7 @@ body {
       color: #fff;
 
       .now {
-        font-size: 42px;
+        font-size: 50px;
       }
     }
 
@@ -333,6 +333,19 @@ body {
           }
         }
       }
+    }
+  }
+  .footer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 98px;
     }
   }
 }
