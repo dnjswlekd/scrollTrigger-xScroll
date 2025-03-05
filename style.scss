@@ -230,6 +230,7 @@ body {
 
           .img-box {
             position: relative;
+            clip-path: inset(30%);
 
             &::before {
               content: '';
@@ -296,6 +297,7 @@ body {
           }
 
           .text-box {
+            opacity: 0;
             position: absolute;
             left: 0;
             bottom: 10%;
