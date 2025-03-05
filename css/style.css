@@ -217,8 +217,59 @@ body {
 .wrap .work ul li a .img-box {
   position: relative;
 }
+.wrap .work ul li a .img-box::before {
+  content: "";
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: url(/images/readMore2.png) no-repeat center/30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 1px solid #fff;
+  z-index: 2;
+  transition: 0.35s;
+  opacity: 0;
+}
+.wrap .work ul li a .img-box::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: url(/images/readMore3.png) no-repeat center/130px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 1;
+  animation-name: workSpin;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.wrap .work ul li a .img-box:hover img {
+  filter: brightness(50%);
+}
+.wrap .work ul li a .img-box:hover::before {
+  opacity: 1;
+}
+.wrap .work ul li a .img-box:hover::after {
+  width: 140px;
+  height: 140px;
+}
 .wrap .work ul li a .img-box img {
+  transition: 0.35s;
   width: 100%;
+}
+@keyframes workSpin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 .wrap .work ul li a .text-box {
   position: absolute;
