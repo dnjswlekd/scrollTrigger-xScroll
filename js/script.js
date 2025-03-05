@@ -42,7 +42,7 @@ $(function () {
 
           .to(
             imgBox,
-            { 'clip-path': 'inset(0%', ease: 'none', duration: 1 },
+            { 'clip-path': 'inset(0%)', ease: 'none', duration: 1 },
             0
           );
 
@@ -65,6 +65,42 @@ $(function () {
             0
           );
       });
+      // 03 이미지 박스 end
+
+      // text motion start
+      gsap.utils
+        .toArray('.work ul li  a .text-box')
+        .forEach(function (textBox) {
+          // 이미지 박스가 커지는 애니메이션 => 화면 오른쪽에서 부터 화면 중앙에서 끝남
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: textBox,
+                containerAnimation: scrollTween,
+                start: 'center 70%',
+                end: 'center 40%',
+                scrub: true,
+                markers: false,
+              },
+            })
+
+            .to(textBox, { opacity: '1', x: '-100', duration: 1 }, 0);
+
+          // 이미지 박스가 작아지는 애니메이션 => 화면 중앙에서 부터 화면 왼쪽에서 끝남
+          gsap
+            .timeline({
+              scrollTrigger: {
+                trigger: textBox,
+                containerAnimation: scrollTween,
+                start: 'center 30%',
+                end: 'center 20%',
+                scrub: true,
+                markers: false,
+              },
+            })
+
+            .to(textBox, { opacity: '0', x: '-100', duration: 1 }, 0);
+        });
     },
   });
 });
