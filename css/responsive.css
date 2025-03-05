@@ -76,15 +76,9 @@
   }
   .wrap .visual .inner .text-box .sub-title {
     font-size: 25px;
-    margin: 0 0 30px;
   }
   .wrap .visual .inner .text-box .desc {
-    width: 60%;
-  }
-  .wrap .visual .inner .button-box {
-    width: 300px;
-    height: 300px;
-    margin-top: 460px;
+    width: 90%;
   }
   .wrap .work ul li {
     width: 100%;
@@ -93,5 +87,35 @@
   }
   .wrap .footer h2 {
     font-size: 70px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .wrap .visual {
+    height: 70vh;
+    padding-top: 110px;
+  }
+  .wrap .visual .inner .text-box {
+    width: 100%;
+  }
+  .wrap .visual .inner .text-box .title span {
+    margin-left: -20px;
+  }
+  .wrap .visual .inner .text-box .sub-title {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+  .wrap .visual .inner .button-box {
+    display: none;
+  }
+  .wrap .work ul li {
+    width: 100%;
+    padding: 0;
+    margin-block: 0 50px;
+  }
+  .wrap .work ul li a .text-box .title {
+    font-size: 30px;
+  }
+  .wrap .footer h2 {
+    font-size: 60px;
   }
 }
