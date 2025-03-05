@@ -213,7 +213,21 @@ body {
     }
   }
   .work {
+    position: relative;
     height: 100vh;
+
+    .counter {
+      position: absolute;
+      font-size: 50px;
+      right: 8%;
+      bottom: 8%;
+      letter-spacing: -3px;
+      color: #fff;
+
+      .now {
+        font-size: 42px;
+      }
+    }
 
     ul {
       display: flex;
@@ -227,6 +241,10 @@ body {
         a {
           display: block;
           position: relative;
+
+          .num {
+            width: 100%;
+          }
 
           .img-box {
             position: relative;

@@ -71,7 +71,7 @@ $(function () {
       gsap.utils
         .toArray('.work ul li  a .text-box')
         .forEach(function (textBox) {
-          // 이미지 박스가 커지는 애니메이션 => 화면 오른쪽에서 부터 화면 중앙에서 끝남
+          // 텍스트 박스가 커지는 애니메이션 => 화면 오른쪽에서 부터 화면 중앙에서 끝남
           gsap
             .timeline({
               scrollTrigger: {
@@ -86,7 +86,7 @@ $(function () {
 
             .to(textBox, { opacity: '1', x: '-100', duration: 1 }, 0);
 
-          // 이미지 박스가 작아지는 애니메이션 => 화면 중앙에서 부터 화면 왼쪽에서 끝남
+          // 텍스트 박스가 작아지는 애니메이션 => 화면 중앙에서 부터 화면 왼쪽에서 끝남
           gsap
             .timeline({
               scrollTrigger: {
@@ -100,6 +100,21 @@ $(function () {
             })
 
             .to(textBox, { opacity: '0', x: '-100', duration: 1 }, 0);
+
+          gsap.utils.toArray('.num').forEach(function (text) {
+            let num = text.getAttribute('data-text');
+            let counter = document.querySelector('.counter .now');
+
+            ScrollTrigger.create({
+              trigger: text,
+              start: '0% center',
+              end: '100% center',
+              containerAnimation: scrollTween,
+              onEnter: (self) => (counter.innerText = num), // 스크롤 위치가 start를 지나 앞으로 이동 할 때. .counter .now에 적어준다.
+              onEnterBack: (self) => (counter.innerText = num), // 스크롤 위치가 end를 지나 뒤로 이동 할 때. .counter .now에 적어준다.
+              markers: true,
+            });
+          });
         });
     },
   });
