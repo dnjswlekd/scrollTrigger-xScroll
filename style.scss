@@ -261,7 +261,7 @@ body {
               transform: translate(-50%, -50%) rotate(45deg);
               border: 1px solid #fff;
               z-index: 2;
-              transition: 0.35s;
+              transition: all 0.35s;
               opacity: 0;
             }
 
@@ -299,7 +299,7 @@ body {
             }
 
             img {
-              transition: 0.35s;
+              transition: all 0.35s;
               width: 100%;
             }
 
